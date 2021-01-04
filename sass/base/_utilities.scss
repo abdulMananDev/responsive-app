@@ -1,0 +1,29 @@
+.u-centered-text{
+
+    text-align:center !important;
+}
+.u-margin-bottom-big{
+
+margin-bottom:8rem  !important;
+@include responsive(tab-port){//is width <600px
+    //we want 1 rem = 8px 8/16=50%
+    margin-bottom:5rem;
+    
+     }
+
+}
+.u-margin-bottom-small{
+    margin-bottom:1.5rem  !important;
+}
+.u-margin-top-huge{
+    margin-top:10rem  !important;
+}
+.u-margin-bottom-medium{
+    margin-bottom:4rem  !important;
+    @include responsive(tab-port){//is width <600px
+        //we want 1 rem = 8px 8/16=50%
+        margin-bottom:3rem;
+        
+         }
+    
+}  

@@ -1,0 +1,109 @@
+body{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color:$color-grey-dark;
+
+
+}
+
+
+
+
+
+.heading-primary 
+  
+{
+    color: $color-white;
+    text-transform: uppercase; 
+    backface-visibility: hidden;
+    margin-bottom:6rem;
+   
+  
+&-main {
+    display: block;
+    font-weight: 400;
+    letter-spacing: 40px;
+    /* text-align:center; */
+    
+    
+    font-size: 6rem;
+    animation-name: moveInleft;
+    animation-duration: 1.55s;
+    /* animation-delay: 1s; */
+    /* animation-iteration-count: 2; */
+    animation-timing-function: ease-in-out; 
+
+    @include responsive(phone){//is width <600px
+       letter-spacing: .5rem   ;
+    }
+
+
+
+}
+  
+    &-sub {
+    display: block;
+    letter-spacing: 14px;
+    font-size:2rem;
+    font-weight:700;
+    animation-name: moveInright;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out; }}
+
+
+    .heading-secondary{
+        font-size: 3rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        display: inline-block;
+        background-image: linear-gradient(to right,$color-primary-light,$color-primary-dark);
+        -webkit-background-clip: text;
+
+        color:transparent;
+        // like clipping maskin photoshop by using both of them
+        letter-spacing:4px;
+        transition: all .2s;
+
+
+        @include responsive(tab-port){//is width <600px
+            font-size:2.5rem ; //we want 1 rem = 8px 8/16=50%
+            }
+            @include responsive(phone){//is width <600px
+                font-size: 2rem; //we want 1 rem = 8px 8/16=50%
+                }
+        &:hover{
+            transform: skewY(-3deg) skewX(-15deg) scale(1.1);
+            text-shadow: .5rem 1rem 2rem rgba($color-black,.4);
+            // .5 in x ,,1 in y,,2rem of blurr ,,rgba fpr color ansd .2 that is 20 %opacity
+        
+
+        }
+    
+    }
+
+    .heading-tertiary{
+        font-size:1.6rem;
+        font-weight:700;
+        text-transform:uppercase;
+    }
+    .paragraph{
+        font-size:1.6rem;
+        &:not(last-child){
+            margin-bottom:3rem;
+        }
+
+    } 
+    .head-secondary-footer{
+        font-size: 3rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        display: inline-block;
+        background-image: linear-gradient(to right,$color-primary-light,$color-primary-dark);
+        -webkit-background-clip: text;
+
+        color:transparent;
+        // like clipping maskin photoshop by using both of them
+        letter-spacing:4px;
+        transition: all .2s;
+    }

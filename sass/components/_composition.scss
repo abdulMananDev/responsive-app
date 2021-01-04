@@ -1,0 +1,88 @@
+.composition{
+  position:relative;
+  @include responsive(tab-port){//is width <900px
+      
+    padding-top:5rem;
+
+  }
+  // we kept the .composition as relative because relative to this composoition parent the photos will be placed the the absolute position and remember the leftmost corner of the component is the oringin(0,0) 
+  &_photo{
+
+
+    width: 55%;//we defined the width of the image as in percentage to make our images flexible and fit to the view port first rule of the responsive design
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
+    border-radius:2px;
+    position: absolute;
+    z-index:10;
+    // z-index defines the priority; here all the images have the equal priority 
+    // but down in hover the images thats being hovered has the higher index of 20 that makes th eimahes being hovered to come on the top 
+    transition:all .2s;
+    outline-offset: 1.5rem;   
+    @include responsive(tab-port){//is width <900px
+      
+      float:left;
+      position: relative;
+      width:33.333%;
+      box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
+      
+
+    }
+
+
+
+
+    &--p1{
+      left:0;
+      top:-2rem;
+
+      @include responsive(tab-port){//is width <900px
+      
+        top:0;
+        z-index:2;
+  
+      }
+
+   }
+    &--p2{
+      right:0px;
+      top:20px;
+      @include responsive(tab-port){//is width <900px
+      
+        top:-1rem;
+        left:.8rem;
+        transform: scale(1.2);
+        z-index:1;
+  
+      }
+
+
+    }
+    &--p3{
+    top:10rem;
+    right:18rem;
+    @include responsive(tab-port){//is width <900px
+      
+      top:0;
+      right:0;
+      transform:scale(1.2);
+
+    }
+
+
+    }
+  &:hover{
+    outline: 1rem solid $color-primary;
+    // for the border and the outline-offset for the space between the image and the border
+
+    transform: scale(1.05);
+    box-shadow: 0 .25rem 4rem rgba($color-black,.6);
+    // if we are scaling it we need to provide the shadow;
+    z-index: 20;
+
+  }
+  }
+    &:hover &_photo:not(:hover){
+      transform:scale(.9);
+      // images that are not being hovered on  scale them down
+    }
+}

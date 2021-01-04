@@ -1,0 +1,108 @@
+.popup{
+
+height:100vh;
+width:100%;
+position:fixed;
+top:0;
+left:0;
+
+z-index:5000;
+background-color: rgba($color-black,.7);
+opacity: 0;
+visibility:hidden;
+transition: all .8s;
+
+@supports(-webkit-backdrop-filter:blur(10px)) or (backdrop-filter:blur(10px)){
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba($color-black,.2);
+}
+// opacity will hide the content but the cursor will always ppoint so we set the visibility =hidden
+&:target{
+    //  anchor tag used;; give the button and the  id same value
+    opacity:1;
+    visibility: visible;
+
+
+}
+
+
+    &__close{
+        &:link,&:visited{
+            color:$color-primary-dark;
+            position: absolute;
+            top:2rem;
+            right:2.5rem;
+            display:inline-block;
+            text-decoration:none;
+            font-size:3rem;
+            font-weight: 300;
+            line-height: 1;
+    
+
+        }
+        &:hover{
+            color:$color-secondary-dark;
+
+        }
+    }
+    
+    
+    &__content{
+       @include absCenter;
+        width:75%;
+        background-color:$color-white;
+        // height:45rem;
+        box-shadow: 0 2rem 4rem rgba($color-black,.4);
+        border-radius:3px;
+        display:table;
+        backface-visibility: hidden;
+        overflow: hidden;
+        
+    }
+   
+   &__left{
+    width:33.34%;
+    // float:left;
+    display:table-cell;
+    //vertical-align: middle;
+    
+    
+
+
+   }
+   &__right{
+       width:66.67%;
+    //    float: left;
+    display:table-cell;
+    vertical-align: middle;
+    padding: 3rem 5rem;
+
+
+
+   } 
+   
+    &__image{
+        display: block; 
+        width:100%;
+        
+
+    }
+
+        &__text{
+         font-size:1.3rem;
+         margin-bottom: 3rem;  
+         column-count:2;
+        //  this is the column property as with the table and th cloumn count is the number if the columns in the table
+         column-gap: 4rem;  
+         
+        //  gap between two columns
+        //  1 em is the font size of the current font size here 14px as font size 1.4rem ,column gap is by default 1 em 
+        // so 4rem =4*14=48px
+        column-rule: 1px solid $color-grey-light-2;
+        hyphens:auto;
+        // obviously for the hyphens and to work correctly put the !Document lang to english (en) 
+
+
+        }
+}

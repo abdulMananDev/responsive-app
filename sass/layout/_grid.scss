@@ -1,0 +1,79 @@
+.row{
+
+    max-width:$grid-width;
+    
+    margin: 0 8rem;
+    margin-bottom:$gutter-vertical;
+
+   &:not(:last-child){
+
+        margin-bottom:$gutter-vertical;
+        @include responsive(tab-port){//is width <600px
+          margin-bottom: $gutter-vertical-phone-tab ; //we want 1 rem = 8px 8/16=50%
+            }
+       
+            @include responsive(tab-port){//is width <600px
+                max-width: 50rem ;
+                padding: 0 3rem //we want 1 rem = 8px 8/16=50%
+                  }
+    }
+    @include clearfix;
+    // including clearfix mixin
+  [class^="column-"]{ 
+      float:left;
+      &:not(:last-child){
+          margin-right: $gutter-horizontal;
+          @include responsive(tab-port){//is width <600px
+            margin-bottom: $gutter-vertical-phone-tab ;    
+            margin-right: 0 ; //we want 1 rem = 8px 8/16=50%
+        }
+      }
+        @include responsive(tab-port){//is width <600px
+            width:100% !important;//we want 1 rem = 8px 8/16=50%
+               
+        }
+        
+    
+    //attribute selector selects all columns
+    // $ select all the class that ends with the column
+    // "^" select all the class that starts with the column
+  }    
+        
+  .column-1{
+
+    width: calc((100% - #{$gutter-horizontal})/2);
+    }
+    .column-2{
+        width: calc((100% - 3 * #{$gutter-horizontal})/4);
+    }
+    .column-3{
+     width: calc((100% - 2* #{$gutter-horizontal})/3);
+    }
+    /*.column-2-3{
+    
+   
+    width: calc(2*((100% -  2 * #{$gutter-horizontal})/3) + #{$gutter-horizontal});
+
+    }
+    */
+}
+   
+
+
+
+
+
+   
+
+    
+                                                                                       
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
